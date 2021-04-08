@@ -2,29 +2,27 @@ let playerChoice;
 
 
 let computerNum;
-let compSelection;
+let computerChoice;
 
 //      Rock = 0
 //     Paper = 1
 // Scissor's = 2
 
-function computerPlay(){
+function computerSelection(){
     computerNum = Math.floor(Math.random(3) * 3);
-    
-    //console.log(computerNum);
 
     if(computerNum === 0){
-        compSelection = "Rock";
+        computerChoice = "Rock";
 
-        console.log(compSelection);
+        console.log(computerChoice);
     }else if(computerNum === 1){
-        compSelection = "Paper";
+        computerChoice = "Paper";
 
-        console.log(compSelection);
+        console.log(computerChoice);
     }else if(computerNum === 2){
-        compSelection = "Scissors";
+        computerChoice = "Scissors";
 
-        console.log(compSelection);
+        console.log(computerChoice);
     }else{
         console.log("Number error generated outside 0-2")
     }
@@ -39,12 +37,13 @@ function playerSelection(){
         console.log("You selected " + playerChoice)
     }else if(playerChoice === "Scissors"){
         console.log("You selected " + playerChoice)
+    }else if(playerChoice === "Scissor's"){
+        playerChoice = "Scissors";
+        console.log("You selected " + playerChoice)
     }else{
         console.log("Your selection is invalid, please select Rock, Paper, or Scissors")
         playerSelection();
     }
-
-    //console.log(playerChoice + " is playerSelection output");
 }
 function capitalize(string){
     let first = string.charAt(0).toUpperCase();
@@ -53,11 +52,6 @@ function capitalize(string){
     
     console.log(first + lastLower);
     return(first + lastLower);
-}
-function lastLetter(string){
-    let letter = string.slice(-1);
-
-    console.log(letter)
 }
 
 playerSelection();
